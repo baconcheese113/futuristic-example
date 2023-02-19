@@ -1,5 +1,6 @@
 import React from 'react';
 import { Button } from '@mui/material';
+import { Layout } from '@futuristic-example/common';
 
 export function App() {
   const [disabled, setDisabled] = React.useState(false);
@@ -8,10 +9,15 @@ export function App() {
     setDisabled(true);
   };
   return (
-    <div>
-      <Button sx={{ color: 'green' }} disabled={disabled} onClick={handleClick}>
-        Click
+    <Layout start>
+      <Layout row>
+        <Button variant="contained" disabled={disabled} onClick={handleClick}>
+          Click Me
+        </Button>
+      </Layout>
+      <Button variant="contained" disabled={disabled} onClick={handleClick}>
+        NO, Click Me
       </Button>
-    </div>
+    </Layout>
   );
 }
