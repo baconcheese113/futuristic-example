@@ -1,6 +1,9 @@
 {
-  "extends": ["plugin:@nrwl/nx/react", "../../.eslintrc.json"],
+  "extends": ["plugin:@nrwl/nx/react", "eslint:recommended", "plugin:react/recommended", "plugin:prettier/recommended", "../../.eslintrc.json"],
   "ignorePatterns": ["!**/*"],
+  "rules": {
+    "react/react-in-jsx-scope": "off"
+  },
   "overrides": [
     {
       "files": ["*.ts", "*.tsx", "*.js", "*.jsx"],
