@@ -6,7 +6,7 @@ NX Console extension fails to stay up to date with workspace configuration (stil
 
 Unable to switch from "cjs" to "esm" format in apollo app. Prevents using top-level await and other es2022 features
 
-Can't configure build to use the prisma.schema file
+Can't configure build to use the prisma.schema file, instead doing a hack to copy it after the serve finishes clearing the dist directory
 https://github.com/prisma/prisma/issues/10433
 https://github.com/prisma/prisma/issues/14033
 

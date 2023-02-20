@@ -4,6 +4,14 @@
   "sourceRoot": "apps/apollo/src",
   "projectType": "application",
   "targets": {
+    "nothing": {
+      "executor": "nx:run-commands",
+      "options": {
+        "commands": [
+          "copy apps\\apollo\\prisma\\schema.prisma dist\\apps\\apollo\\schema.prisma"
+        ]
+      }
+    },
     "build": {
       "executor": "@nrwl/esbuild:esbuild",
       "outputs": [
@@ -17,7 +25,12 @@
         "main": "apps/apollo/src/main.ts",
         "tsConfig": "apps/apollo/tsconfig.app.json",
         "assets": [
-          "apps/apollo/src/assets"
+          "apps/apollo/src/assets",
+          {
+            "input": "apps/apollo/prisma",
+            "glob": "schema.prisma",
+            "output": "."
+          }
         ],
         "esbuildOptions": {
           "sourcemap": true,
@@ -43,6 +56,16 @@
         "production": {
           "buildTarget": "apollo:build:production"
         }
+      }
+    },
+    // The literal hackiest hack that has ever been hacked
+    "startup": {
+      "executor": "nx:run-commands",
+      "options": {
+        "commands": [
+          "PING 1.1.1.1 -n 4 > NUL && echo Now copying file && nx nothing apollo",
+          "nx serve apollo"
+        ]
       }
     },
     "lint": {
