@@ -16,7 +16,8 @@
     "baseUrl": ".",
     "paths": {
       "@futuristic-example/common": ["libs/common/src/index.ts"]
-    }
+    },
+    "importsNotUsedAsValues": "error"
   },
   "exclude": ["node_modules", "tmp"]
 }

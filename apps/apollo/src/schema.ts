@@ -1,7 +1,8 @@
-import './resolvers/graphTypes';
 // import './resolvers/mutations';
-import { prisma } from './context';
+import './resolvers/graphTypes';
+
 import { builder } from './builder';
+import { prisma } from './context';
 
 // builder.mutationType({});
 
@@ -64,3 +65,6 @@ builder.queryType({
 });
 
 export const schema = builder.toSchema({});
+
+// const schemaAsString = printSchema(lexicographicSortSchema(schema));
+// writeFileSync('schema.graphql', schemaAsString);

@@ -1,16 +1,16 @@
-import { SerializedStyles } from '@emotion/react';
-import { css } from '@emotion/react';
+import { css, SerializedStyles } from '@emotion/react';
 
 type Props = {
   row?: boolean;
   start?: boolean;
   center?: boolean;
   end?: boolean;
+  flex?: boolean;
   children: React.ReactNode;
 };
 
 export function Layout(props: Props) {
-  const { row, start, center, end, children } = props;
+  const { row, start, center, end, flex, children } = props;
 
   const getTerm = () => {
     if (start) return 'start';
@@ -43,6 +43,7 @@ export function Layout(props: Props) {
         {
           display: 'flex',
           flexDirection: row ? 'row' : 'column',
+          flex: flex ? 1 : undefined,
         },
       ]}
     >
