@@ -1,11 +1,9 @@
 import SchemaBuilder from '@pothos/core';
-import { PrismaClient } from '@prisma/client';
 import PrismaPlugin from '@pothos/plugin-prisma';
 // Using a type only import will help avoid issues with undeclared
 // exports in esm mode
 import type PrismaTypes from '@pothos/plugin-prisma/generated';
-
-const prisma = new PrismaClient({});
+import { prisma } from './context';
 
 export const builder = new SchemaBuilder<{
   PrismaTypes: PrismaTypes;

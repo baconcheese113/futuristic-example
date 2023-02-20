@@ -1,17 +1,18 @@
-// import './resolvers/graphTypes';
+import './resolvers/graphTypes';
 // import './resolvers/mutations';
+import { prisma } from './context';
 import { builder } from './builder';
 
 // builder.mutationType({});
 
 builder.queryType({
   fields: (t) => ({
-    todos: t.field({
-      type: 'String',
+    todos: t.prismaField({
+      type: ['Todo'],
       nullable: false,
       args: {},
       resolve: async (_query, _root, _args) => {
-        return 'What';
+        return prisma.todo.findMany();
       },
     }),
     // hub: t.prismaField({
