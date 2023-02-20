@@ -1,0 +1,27 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+generator pothos {
+  provider = "prisma-pothos-types"
+  clientOutput = "@prisma/client"
+  output = "./pothos-types.ts"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = "file:./dev.db"
+}
+
+model User {
+  id Int @id @default(autoincrement())
+  email String @unique
+  todos Todo[]
+}
+
+model Todo {
+  id  Int @id @default(autoincrement())
+  title String
+  owner User @relation(fields: [ownerId], references: [id])
+  ownerId Int
+}
