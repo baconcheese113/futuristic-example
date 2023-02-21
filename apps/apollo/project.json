@@ -69,7 +69,7 @@
           // windows
           // "PING 1.1.1.1 -n 4 > NUL && echo Now copying file && nx nothing apollo",
           // linux
-          "sleep 4 && echo Now copying file && nx copy-schema apollo",
+          "sleep 3 && echo Now copying file && nx copy-schema apollo",
           "nx serve apollo"
         ]
       }

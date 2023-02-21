@@ -12,6 +12,7 @@ https://github.com/prisma/prisma/issues/14033
 
 ## Development server
 
+Run `npx nx generate-schema client` to use codegen to generate types from tsx queries
 Run `npx nx serve client` for a FE dev server. Navigate to http://localhost:4200/. The app will automatically reload if you change any of the source files.
 
 Run `npx nx prisma-generate apollo` to generate prisma/pothos types
