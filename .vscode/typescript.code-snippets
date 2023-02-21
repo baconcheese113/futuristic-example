@@ -1,0 +1,32 @@
+{
+  "Create fragment based react component": {
+    "prefix": "cmpf",
+    "body": [
+      "import { Layout } from '@futuristic-example/common';",
+      "",
+      "import { FragmentType, graphql, useFragment } from './gql';",
+      "",
+      "const ${2:${TM_FILENAME_BASE/(.*)/${1:/camelcase}/}}_${3:key} = graphql(`",
+      "  fragment $2_$3 on ${4:${3/(.*)/${1:/pascalcase}/}} {",
+      "    id",
+      "  }",
+      "`);",
+      "",
+      "type Props = {",
+      "  $3: FragmentType<typeof $2_$3>;",
+      "};",
+      "",
+      "export function ${2/(.*)/${1:/pascalcase}/}(props: Props) {",
+      "  const $3 = useFragment($2_$3, props.$3);",
+      "",
+      "  return (",
+      "    <Layout>",
+      "      <div>{$3.id}</div>",
+      "    </Layout>",
+      "  );",
+      "}",
+      ""
+    ],
+    "description": "Create a new React component with a gql fragment"
+  }
+}
