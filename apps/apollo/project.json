@@ -4,11 +4,14 @@
   "sourceRoot": "apps/apollo/src",
   "projectType": "application",
   "targets": {
-    "nothing": {
+    "copy-schema": {
       "executor": "nx:run-commands",
       "options": {
         "commands": [
-          "copy apps\\apollo\\prisma\\schema.prisma dist\\apps\\apollo\\schema.prisma"
+          // windows
+          // "copy apps\\apollo\\prisma\\schema.prisma dist\\apps\\apollo\\schema.prisma"
+          // linux-based
+          "cp apps/apollo/prisma/schema.prisma dist/apps/apollo/schema.prisma"
         ]
       }
     },
@@ -63,7 +66,10 @@
       "executor": "nx:run-commands",
       "options": {
         "commands": [
-          "PING 1.1.1.1 -n 4 > NUL && echo Now copying file && nx nothing apollo",
+          // windows
+          // "PING 1.1.1.1 -n 4 > NUL && echo Now copying file && nx nothing apollo",
+          // linux
+          "sleep 4 && echo Now copying file && nx copy-schema apollo",
           "nx serve apollo"
         ]
       }

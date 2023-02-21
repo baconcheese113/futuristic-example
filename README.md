@@ -14,6 +14,8 @@ https://github.com/prisma/prisma/issues/14033
 
 Run `npx nx serve client` for a FE dev server. Navigate to http://localhost:4200/. The app will automatically reload if you change any of the source files.
 
+Run `npx nx prisma-generate apollo` to generate prisma/pothos types
+Run `npx nx prisma-push apollo` to configure the sqlite db with the schema
 Run `npx nx startup apollo` to start the backend server (and apply the hack). You can view the Apollo Studio UI at http://localhost:8080/
 
 ## Understand this workspace
