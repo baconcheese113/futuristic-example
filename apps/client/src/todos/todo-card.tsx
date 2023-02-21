@@ -2,7 +2,7 @@ import { Text } from '@futuristic-example/common';
 import DeleteIcon from '@mui/icons-material/Delete';
 import { Card, CardActions, CardContent, IconButton } from '@mui/material';
 
-import { FragmentType, graphql, useFragment } from './gql';
+import { FragmentType, graphql, useFragment } from '../gql';
 import { TodoOwner } from './todo-owner';
 
 const todoCard_todo = graphql(`
@@ -29,6 +29,7 @@ export function TodoCard(props: Props) {
         <TodoOwner owner={todo.owner} />
         <Text header value={todo.title} />
       </CardContent>
+
       <CardActions>
         <IconButton onClick={handleDelete}>
           <DeleteIcon />

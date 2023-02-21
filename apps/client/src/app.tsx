@@ -1,15 +1,8 @@
 import { ThemeProvider } from '@emotion/react';
 import { Text } from '@futuristic-example/common';
-import {
-  AppBar,
-  Box,
-  createTheme,
-  CssBaseline,
-  Grid,
-  Toolbar,
-} from '@mui/material';
+import { AppBar, Box, createTheme, CssBaseline, Toolbar } from '@mui/material';
 
-import { TodoList } from './todo-list';
+import { TodoList } from './todos/todo-list';
 
 const darkTheme = createTheme({
   palette: {
@@ -30,11 +23,8 @@ export function App() {
             <Text header value="Todos" />
           </Toolbar>
         </AppBar>
-        <Grid container justifyContent="center">
-          <Grid xs={6}>
-            <TodoList title="All Todos" />
-          </Grid>
-        </Grid>
+
+        <TodoList />
       </Box>
     </ThemeProvider>
   );

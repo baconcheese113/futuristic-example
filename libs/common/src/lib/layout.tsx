@@ -1,4 +1,4 @@
-import { css, SerializedStyles } from '@emotion/react';
+import { css, CSSObject, SerializedStyles } from '@emotion/react';
 
 type Props = {
   row?: boolean;
@@ -6,11 +6,12 @@ type Props = {
   center?: boolean;
   end?: boolean;
   flex?: boolean;
+  sx?: CSSObject;
   children?: React.ReactNode;
 };
 
 export function Layout(props: Props) {
-  const { row, start, center, end, flex, children } = props;
+  const { row, start, center, end, flex, sx, children } = props;
 
   const getTerm = () => {
     if (start) return 'start';
@@ -38,6 +39,7 @@ export function Layout(props: Props) {
   return (
     <div
       css={[
+        sx,
         getJustify(),
         getAlign(),
         {
