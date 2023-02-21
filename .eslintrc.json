@@ -6,7 +6,7 @@
     "sourceType": "module"
   },
   "env": {"es6": true},
-  "plugins": ["@nrwl/nx", "prettier", "simple-import-sort", "import"],
+  "plugins": ["@nrwl/nx", "prettier", "simple-import-sort", "import", "unused-imports"],
   "overrides": [
     {
       "files": ["*.ts", "*.tsx", "*.js", "*.jsx"],
@@ -29,7 +29,8 @@
         "import/first": "error",
         "import/newline-after-import": "error",
         "import/no-duplicates": "error",
-        "@typescript-eslint/no-unused-vars": ["error", { "argsIgnorePattern": "^_" }]
+        "@typescript-eslint/no-unused-vars": ["error", { "argsIgnorePattern": "^_" }],
+        "unused-imports/no-unused-imports": "error"
       }
     },
     {

@@ -6,7 +6,7 @@ type Props = {
   center?: boolean;
   end?: boolean;
   flex?: boolean;
-  children: React.ReactNode;
+  children?: React.ReactNode;
 };
 
 export function Layout(props: Props) {
